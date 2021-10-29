@@ -8,7 +8,7 @@ LABEL maintainer="Rohit Roy Chowdhury"
 COPY /techtrends/. techtrends
 
 #WORKDIR location
-WORKDIR /app
+WORKDIR /techtrends
 
 #Installing requirements
 RUN pip install -U pip wheel setuptools && pip install -r requirements.txt
