@@ -8,7 +8,32 @@ docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
-docker logs
+docker logs 9b8beb94ca0a
+
+# OR Try this
+docker logs gifted_poincare
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+# TODO: paste logs from the Docker container
+docker logs 9b8beb94ca0a
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug:2021-10-29 13:33:49,485,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:2021-10-29 13:34:07,368, Main request successfull
+INFO:werkzeug:2021-10-29 13:34:07,541, 172.17.0.1 - - [29/Oct/2021 13:34:07] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-10-29 13:34:07,630, 172.17.0.1 - - [29/Oct/2021 13:34:07] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:2021-10-29 13:34:07,934, 172.17.0.1 - - [29/Oct/2021 13:34:07] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:2021-10-29 13:34:54,470, Main request successfull
+INFO:werkzeug:2021-10-29 13:34:54,492, 172.17.0.1 - - [29/Oct/2021 13:34:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-10-29 13:34:54,732, 172.17.0.1 - - [29/Oct/2021 13:34:54] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:2021-10-29 13:34:54,949, 172.17.0.1 - - [29/Oct/2021 13:34:54] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:2021-10-29 13:35:50,654, Status request successfull
+INFO:werkzeug:2021-10-29 13:35:50,657, 172.17.0.1 - - [29/Oct/2021 13:35:50] "GET /healthz HTTP/1.1" 200 -
+INFO:app:2021-10-29 13:35:58,346, Metrics request successfull
+INFO:werkzeug:2021-10-29 13:35:58,347, 172.17.0.1 - - [29/Oct/2021 13:35:58] "GET /metrics HTTP/1.1" 200 -
+INFO:app:2021-10-29 13:36:07,070, The "About Us" page is retrieved
+INFO:werkzeug:2021-10-29 13:36:07,078, 172.17.0.1 - - [29/Oct/2021 13:36:07] "GET /about HTTP/1.1" 200 -
+
