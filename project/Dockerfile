@@ -11,7 +11,7 @@ COPY ./project/techtrends .
 WORKDIR /techtrends
 
 #Installing requirements
-RUN pip install -U pip wheel setuptools && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 #exposing in port 3111
 EXPOSE 3111
