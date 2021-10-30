@@ -5,7 +5,7 @@ FROM python:2.7
 LABEL maintainer="Rohit Roy Chowdhury"
 
 # copy files from the host to the container
-COPY /techtrends/. techtrends
+COPY ./techtrends .
 
 #WORKDIR location
 WORKDIR /techtrends
