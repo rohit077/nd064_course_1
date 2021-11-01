@@ -8,9 +8,9 @@ metadata:
   namespace: {{ .Values.namespace.name }}
 spec:
   ports:
-  - port: {{ .Values.services.port }}
-    protocol: TCP
-    targetPort: {{ .Values.services.port }}
+    - port: {{ .Values.service.port }}
+      protocol: {{ .Values.service.protocol }}
+      targetPort: {{ .Values.service.targetPort }}
   selector:
     app: techtrends
-  type: {{ .Values.services.type }}
+  type: {{ .Values.service.type }}
