@@ -19,9 +19,24 @@ spec:
         app: techtrends
     spec:
       containers:
-        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - image: rohit077/techtrends:latest
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         resources:
           requests:
-{{ toYaml .Values.resources | indent 12 }}
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 3111
+            protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
