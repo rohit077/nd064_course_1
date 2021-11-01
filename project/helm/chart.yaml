@@ -1,9 +1,0 @@
-apiVersion: v1
-name: techtrends
-description: Install techtrends deployment manifests
-keywords:
-  - techtrends
-version: 1.0.0
-maintainers:
-  - name: rohitroychowdhury
-    email: roychowdhuryrohit0@gmail.com
