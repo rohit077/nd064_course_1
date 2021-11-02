@@ -34,9 +34,9 @@ spec:
             protocol: TCP
         livenessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.livenessProbe.port }}
         readinessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.readinessProbe.path }}
+            port: {{ .Values.readinessProbe.port }}

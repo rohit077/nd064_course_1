@@ -11,7 +11,11 @@ spec:
   selector:
     matchLabels:
       app: techtrends
-  strategy: {}
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
@@ -19,23 +23,24 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: techtrends:latest
+      - image: rohit077/techtrends:latest
         name: techtrends
-        resources:
+      ports:
+      - containerPort: 3111
+        protocol: TCP
+      livenessProbe:
+           httpGet:
+             path: /healthz
+             port: 3111
+      readinessProbe:
+           httpGet:
+             path: /healthz
+             port: 3111
+      resources:
           requests:
-            cpu: "250m"
             memory: "64Mi"
+            cpu: "250m"
           limits:
-            cpu: "500m"
             memory: "128Mi"
-        ports:
-        - containerPort: 3111
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 3111
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 3111
+            cpu: "500m"
 status: {}
